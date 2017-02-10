@@ -1,0 +1,21 @@
+{
+  "name": "pub_sub",
+  "version": "1.0.0",
+  "description": "Forked from Rob's codes",
+  "main": "pubRunner.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisLinn/pub_sub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisLinn/pub_sub/issues"
+  },
+  "homepage": "https://github.com/ChrisLinn/pub_sub#readme"
+}

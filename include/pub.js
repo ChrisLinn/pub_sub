@@ -25,7 +25,8 @@ class Publisher
             let zipped = Com.serialiseData(data);
             // Send data
             remote.write(new Com.PubMsg(zipped, label).toString());
-            console.log('Sent:\n'+zipped.toString());
+            console.log('Data:\n'+data);
+            console.log('Zipped data sent:\n'+zipped.toString()+'\n\n\n');
         });
     }
 }

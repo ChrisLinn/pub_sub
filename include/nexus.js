@@ -13,7 +13,7 @@ class Nexus
     start()
     {
         this.server = Net.createServer((conn) => {
-            console.log('New connection');
+            console.log('\nNew connection');
 
             conn.on('data', (data) => {
                 let msg = JSON.parse(data.toString('utf8'));
