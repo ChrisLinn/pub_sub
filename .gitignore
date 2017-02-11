@@ -1,5 +1,8 @@
 upload/
 download/
+*.sublime-project
+*.sublime-workspace
+
 
 # Logs
 logs
