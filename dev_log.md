@@ -14,3 +14,4 @@ into db
     + gonna save the file
     + can save the file now
     + can have appropriate filename now
+    + can work with non-existing directory now

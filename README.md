@@ -11,11 +11,8 @@ how to deploy the project on a live system.
 ### Prerequisites
 
 + nodejs & npm
-+ notify
-    + run `npm install inotify`
-``
-Give examples
-``
++ `notify` package
++ `mkdirp` package
 
 ### Installing
 

@@ -1,3 +1,4 @@
+const os = require('os');
 const FTP = require('./include/ftp_slave.js');
 const PubSub = require('./include/lib.js');
 
@@ -14,10 +15,12 @@ function process(label, data) {
 
     console.log('Unzipped data:\n'+data);
 
+    var mkdirp = require('mkdirp');
     var fs = require('fs');
-    var filename = label.split("/");
 
-    fs.writeFile("./download/"+filename[filename.length-1], data, function(err) {
+    mkdirp(os.homedir()+"/ftp-files/allume/");
+    var filename = label.split("/");
+    fs.writeFile(os.homedir()+"/ftp-files/allume/"+filename[filename.length-1], data, function(err) {
         if(err) {
             return console.log(err);
         }
