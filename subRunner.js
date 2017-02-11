@@ -15,7 +15,9 @@ function process(label, data) {
     console.log('Unzipped data:\n'+data);
 
     var fs = require('fs');
-    fs.writeFile("./download/1.txt", data, function(err) {
+    var filename = label.split("/");
+
+    fs.writeFile("./download/"+filename[filename.length-1], data, function(err) {
         if(err) {
             return console.log(err);
         }
