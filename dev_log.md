@@ -1,11 +1,18 @@
 # notes
 
 # todo
-+ save the data received into files
++ sub daemon process
+    + forever
 + make a process to check whether there's a file and then insert the new data
 into db
     + ~~make it integrated~~
-    + has to be a daemon process
+    + check new files?
+        + no
+            + check every file
+            + check everytime with mongodb whether there is new file
+    - can run at startup first
+    - make it scheduled
+        + need to complete following what is also required for update_meter_data
 
 # logs
 + 20170210
@@ -16,3 +23,4 @@ into db
     + can have appropriate filename now
     + can work with non-existing directory now
     + finished subRunner I think
+- 20170212
