@@ -1,9 +1,10 @@
 //const AWS    = require('aws-sdk');
 const FTP    = require('./include/ftp_slave.js');
 const PubSub = require('./include/lib.js');
+const os = require('os');
 
 // The directory to transfer FTP traffic from
-const FTP_DIR = './upload';
+const FTP_DIR = os.homedir()+"/../ftpusers/acumen/metering";
 
 // The remote host and port to publish events to
 const REMOTE_HOST = '54.206.70.218';
