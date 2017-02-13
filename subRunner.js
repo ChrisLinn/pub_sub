@@ -1,9 +1,8 @@
 const os = require('os');
-const FTP = require('./include/ftp_slave.js');
 const PubSub = require('./include/lib.js');
 
 // The remote host and port to publish events to
-const REMOTE_HOST = 'localhost';
+const REMOTE_HOST = '54.206.70.218';
 
 // const subber = new PubSub.Subscriber(REMOTE_HOST, (label, data) => {
 //     process(data);
@@ -19,7 +18,7 @@ function process(label, data) {
     var fs = require('fs');
 
     var filename = label.split("/");
-    var save_to_path =  os.homedir()+"/ftp-files/allume/";
+    var save_to_path =  os.homedir()+"/ftp-files/acumen/";
     fs.writeFile(save_to_path+filename[filename.length-1], data, function(err) {
         if(err) {
             // console.log(err);
