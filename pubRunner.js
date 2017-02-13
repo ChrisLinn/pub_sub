@@ -6,7 +6,7 @@ const PubSub = require('./include/lib.js');
 const FTP_DIR = './upload';
 
 // The remote host and port to publish events to
-const REMOTE_HOST = 'localhost';
+const REMOTE_HOST = '54.206.70.218';
 
 //// The S3 bucket to use
 //const NMI_BUCKET = 'ftp-nmi-data';
