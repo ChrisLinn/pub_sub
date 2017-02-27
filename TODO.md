@@ -10,3 +10,11 @@ into db
     + sysmd may not be good for log
     + `forever` is not good for  
     + screen
+- Ray's questions
+    + which property
+    + which user
+    + which meter
+    + how often
+    + allume and narromine same
+    + ...
+
