@@ -19,13 +19,13 @@ process.stdin.on('data', function (text) {
         console.log('REMOTE_HOST set to 54.206.70.218.\n');
     }
     
-    const subber = new PubSub.Subscriber(REMOTE_HOST, process);
+    const subber = new PubSub.Subscriber(REMOTE_HOST, process_data);
 
     subber.connect();
 });
 
 
-function process(label, data) {
+function process_data(label, data) {
 
     //console.log('Unzipped data:\n'+data);
     var filename = label.split("/");
