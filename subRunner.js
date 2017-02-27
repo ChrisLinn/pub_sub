@@ -15,7 +15,6 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', function (text) {
     if (text === '1\n') {
         REMOTE_HOST = '54.206.70.218';
-        FTP_DIR = os.homedir()+"/../ftpusers/acumen/metering";
         console.log('REMOTE_HOST set to 54.206.70.218.\n');
     }
     
