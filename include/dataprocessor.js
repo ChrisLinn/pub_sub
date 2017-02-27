@@ -32,6 +32,10 @@ const nem12 = {
 
 class DataProcessor{
 
+    constructor(db_url){
+        this.db_url = db_url;
+    }
+
     process (rows,callback) {
         for (let i = 0; i < rows.length; i++) {
             let row = rows[i].split(",");
@@ -104,7 +108,7 @@ class DataProcessor{
                     //     if (err) return console.error(err);
                     // }
 
-                    new Db().init((db) =>
+                    new Db(this.db_url).init((db) =>
                     {
                         var meterData = db.collection("MeterData");
                         meterData.update(

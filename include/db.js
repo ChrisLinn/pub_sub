@@ -1,13 +1,16 @@
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
 class Db{
+
+    constructor(url){
+        this.url = url;
+    }
 
     init(cb){
         // body...
         // Use connect method to connect to the server
-        MongoClient.connect(url, function(err, db) {
+        MongoClient.connect(this.url, function(err, db) {
             assert.equal(null, err);
             // console.log("Connected successfully to server");
             return cb(db);

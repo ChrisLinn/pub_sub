@@ -1,34 +1,23 @@
 /**
  *  Created by chris on 12/02/2017.
-    This module is for updating acumen data as a scheduled task.
  */
 
-// Meteor Atmosphere packages
-// import {Meteor} from 'meteor/meteor';
-// import {Mongo} from 'meteor/mongo';
-
-// Node packages
-
-// Own defined js files
-// import Acumen from "../../../api/collections/acumen.js";
-
-// Constants
+//const
 const atob = require('atob');
 const os = require('os');
 const fs = require('fs');
-const Db = require('./db.js');
+const Db = require('./include/db.js');
 const DataProcessor = require('./dataprocessor.js');
-// const Fiber = Npm.require('fibers');
 const folder = os.homedir()+"/ftp-files/acumen/";
+const db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
 
 
+// body
 // get all files
 files = fs.readdirSync(folder);
 
 files.forEach(file => {
-    // console.log(file);
-
-    new Db().init((db) =>
+    new Db(db_url).init((db) =>
         {
             var files = db.collection("ftp-files");
             files.findOne({
@@ -43,10 +32,10 @@ files.forEach(file => {
                             }
                             // let rows = atob(data).split("\r\n");
                             let rows = data.split("\r\n");
-                            new DataProcessor().process(rows);
+                            new DataProcessor(db_url).process(rows);
                         });
 
-                        new Db().init((db) =>{
+                        new Db(db_url).init((db) =>{
                             var files = db.collection("ftp-files");
                             files.insert({name: file}, (error) => {
                                 if(error)
