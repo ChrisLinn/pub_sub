@@ -43,5 +43,5 @@ process.stdin.on('data', function (text) {
     //     let body
     // });
     ftpListener.start();
-    console.log('Start keeping eyes on the folder');
+    console.log('Start keeping eyes on the folder\n');
 });
