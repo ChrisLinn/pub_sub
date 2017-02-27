@@ -8,7 +8,7 @@ const os = require('os');
 const fs = require('fs');
 const Db = require('./include/db.js');
 const DataProcessor = require('./include/dataprocessor.js');
-const folder = os.homedir()+"/ftp-files/acumen/";
+const folder = os.homedir()+"/ftp-download/acumen/";
 const db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
 
 
