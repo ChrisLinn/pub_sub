@@ -40,7 +40,7 @@ process.stdin.on('data', function (text) {
 
         new Db(db_url).init((db) =>{
             var files = db.collection("ftp-files");
-            files.insert({name: file}, (error) => {
+            files.insert({name: filename[filename.length-1]}, (error) => {
                 if(error)
                     console.log(error);
             });
