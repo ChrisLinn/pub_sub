@@ -26,7 +26,7 @@ process.stdin.on('data', function (text) {
         //console.log('Unzipped data:\n'+data);
         var filename = label.split("/");
         fs.writeFileSync(save_to_path+filename[filename.length-1], data);
-        console.log("The file was saved!\n\n\n");
+        console.log("The file was saved!\n");
 
         //insert the data into db
         fs.readFile(save_to_path+filename[filename.length-1], 'utf8', function (err,data) {
@@ -36,6 +36,7 @@ process.stdin.on('data', function (text) {
             // let rows = atob(data).split("\r\n");
             let rows = data.split("\r\n");
             new DataProcessor(db_url).process(rows);
+            console.log("Data inserted into DB!\n");
         });
 
         new Db(db_url).init((db) =>{
@@ -45,7 +46,9 @@ process.stdin.on('data', function (text) {
                     console.log(error);
             });
             db.close();
+            console.log("File marked!\n\n\n");
         });
+
     }
 
     subber.connect();
