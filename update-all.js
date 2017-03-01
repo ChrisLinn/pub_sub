@@ -9,44 +9,43 @@ const fs = require('fs');
 const Db = require('./include/db.js');
 const DataProcessor = require('./include/dataprocessor.js');
 const folder = os.homedir()+"/ftp-download/acumen/";
-const db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
-
+var db_url = 'mongodb://localhost:27017/test';
+// var db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
 
 // body
 // get all files
 files = fs.readdirSync(folder);
 
 files.forEach(file => {
-    new Db(db_url).init((db) =>
-        {
-            var files = db.collection("ftp-files");
-            files.findOne({
-                    name: file
-                }).then((result) => {
-                    //if not existing in mongodb
-                    if(result == null){
-                        console.log("processing "+file);
-                        fs.readFile(folder+file, 'utf8', function (err,data) {
-                            if (err) {
-                                return console.log(err);
-                            }
-                            // let rows = atob(data).split("\r\n");
-                            let rows = data.split("\r\n");
-                            new DataProcessor(db_url).process(rows);
-                        });
+    new Db(db_url).init((db) => {
+        var files = db.collection("ftp_files");
+        files.findOne({
+                name: file
+            }).then((result) => {
+                //if not existing in mongodb
+                if(result == null){
+                    console.log("processing "+file);
+                    fs.readFile(folder+file, 'utf8', function (err,data) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                        // let rows = atob(data).split("\r\n");
+                        let rows = data.split("\r\n");
+                        new DataProcessor(db_url).process(rows);
+                    });
 
-                        new Db(db_url).init((db) =>{
-                            var files = db.collection("ftp-files");
-                            files.insert({name: file}, (error) => {
-                                if(error)
-                                    console.log(error);
-                            });
-                            db.close();
+                    new Db(db_url).init((db) =>{
+                        var files = db.collection("ftp_files");
+                        files.insert({name: file}, (error) => {
+                            if(error)
+                                console.log(error);
                         });
-                    } else{
-                        console.log(file + " already processed!");
-                    };
-                });
-            db.close();
-        });
+                        db.close();
+                    });
+                } else{
+                    console.log(file + " already processed!");
+                };
+            });
+        db.close();
+    });
 });

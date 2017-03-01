@@ -4,7 +4,7 @@ const mkdirp = require('mkdirp');
 const fs = require('fs');
 const Db = require('./include/db.js');
 const DataProcessor = require('./include/dataprocessor.js');
-const db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
+var db_url = 'mongodb://localhost:27017/test';
 
 var save_to_path =  os.homedir()+"/ftp-download/acumen/";
 mkdirp(save_to_path);
@@ -16,6 +16,7 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('data', function (text) {
     if (text === '1\n') {
         REMOTE_HOST = '54.206.70.218';
+        db_url = 'mongodb://chris:1211@ds056979.mlab.com:56979/whatname';
         console.log('REMOTE_HOST set to 54.206.70.218.\n');
     }
 
@@ -40,7 +41,7 @@ process.stdin.on('data', function (text) {
         });
 
         new Db(db_url).init((db) =>{
-            var files = db.collection("ftp-files");
+            var files = db.collection("ftp_files");
             files.insert({name: filename[filename.length-1]}, (error) => {
                 if(error)
                     console.log(error);
