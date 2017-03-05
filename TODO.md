@@ -1,5 +1,6 @@
 # TODO
 
++ NEM standard
 + connect to db and then insert
 + make a process to check whether there's a file and then insert the new data
 into db
@@ -22,5 +23,5 @@ into db
     + An entry in `Meter` looks like `{ "_id" : "5KWX7WzCqPrzvM99o", "nmi" : null, "userId" : [ ], "type" : "test", "manufacturer" : "Saturn South", "model" : "mini CT meter", "serialNumber" : "none" }` . May use `nmi` to store NMI. (edited)
     + no `propertyId` in `Meter`
         + don’t know which meter refers to which property
-    - And currently we only have valid NG entires in `Properties`, but not narromine ones. Does any one have details of users? Only when having these info would it be possible for me to create accounts for them.
+    - dAnd currently we only have valid NG entires in `Properties`, but not narromine ones. Does any one have details of users? Only when having these info would it be possible for me to create accounts for them.
 
