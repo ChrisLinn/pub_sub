@@ -1,6 +1,47 @@
 # TODO
 
 + NEM standard
++ B3 all 0s
++ E2
+    * ./nem12_acumemdp_allume_ene_t0002475453.csv
+    * ./nem12_acumemdp_allume_ene_t0002473099.csv
+    * ./nem12_acumemdp_allume_ene_t0002548900.csv
+    * ./nem12_acumemdp_allume_ene_t0002543996.csv
+    * ./nem12_acumemdp_allume_ene_t0002530286.csv
+    * ./nem12_acumemdp_allume_ene_t0002502750.csv
+    * ./nem12_acumemdp_allume_ene_t0002488764.csv
+    * ./nem12_acumemdp_allume_ene_t0002494729.csv
+    * ./nem12_acumemdp_allume_ene_t0002582081.csv
+    * ./nem12_acumemdp_allume_ene_t0002515677.csv
+    * ./nem12_acumemdp_allume_ene_t0002479159.csv
+    * ./nem12_acumemdp_allume_ene_t0002483802.csv
+    * ./nem12_acumemdp_allume_ene_t0002533707.csv
+    * ./nem12_acumemdp_allume_ene_t0002552236.csv
+    * ./nem12_acumemdp_allume_ene_t0002536259.csv
+    * ./nem12_acumemdp_allume_ene_t0002505920.csv
+    * ./nem12_acumemdp_allume_ene_t0002554071.csv
+    * ./nem12_acumemdp_allume_ene_t0002566784.csv
+    * ./nem12_acumemdp_allume_ene_t0002560438.csv
+    * ./nem12_acumemdp_allume_ene_t0002566878.csv
+    * ./nem12_acumemdp_allume_ene_t0002534476.csv
+    * ./nem12_acumemdp_allume_ene_t0002537239.csv
+    * ./nem12_acumemdp_allume_ene_t0002525035.csv
+    * ./nem12_acumemdp_allume_ene_t0002538700.csv
+    * ./nem12_acumemdp_allume_ene_t0002475588.csv
+    * ./nem12_acumemdp_allume_ene_t0002545489.csv
+    * ./nem12_acumemdp_allume_ene_t0002519804.csv
+    * ./nem12_acumemdp_allume_ene_t0002559169.csv
+    * ./nem12_acumemdp_allume_ene_t0002557281.csv
+    * ./nem12_acumemdp_allume_ene_t0002478101.csv
+    * ./nem12_acumemdp_allume_ene_t0002550852.csv
+    * ./nem12_acumemdp_allume_ene_t0002513297.csv
+    * ./nem12_acumemdp_allume_ene_t0002510786.csv
+    * ./nem12_acumemdp_allume_ene_t0002510753.csv
+    * ./nem12_acumemdp_allume_ene_t0002566054.csv
+    * ./nem12_acumemdp_allume_ene_t0002561874.csv
+    * ./nem12_acumemdp_allume_ene_t0002505239.csv
+    * ./nem12_acumemdp_allume_ene_t0002500449.csv
+    * ./nem12_acumemdp_allume_ene_t0002509509.csv
 + connect to db and then insert
 + make a process to check whether there's a file and then insert the new data
 into db
